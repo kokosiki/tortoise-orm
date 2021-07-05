@@ -544,7 +544,7 @@ class IntEnumFieldInstance(SmallIntField):
 
         # Automatic description for the field if not specified by the user
         if description is None:
-            description = "\n".join([f"{e.name}: {int(e.value)}" for e in enum_type])[:2048]
+            description = ""
 
         super().__init__(description=description, **kwargs)
         self.enum_type = enum_type
@@ -605,7 +605,7 @@ class CharEnumFieldInstance(CharField):
     ) -> None:
         # Automatic description for the field if not specified by the user
         if description is None:
-            description = "\n".join([f"{e.name}: {str(e.value)}" for e in enum_type])[:2048]
+            description = ""
 
         # Automatic CharField max_length
         if max_length == 0:
